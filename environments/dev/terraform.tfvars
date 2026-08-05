@@ -8,4 +8,4 @@ labels = {
   environment = "dev"
   owner       = "gokul"
   managed_by  = "terraform"
-}v
+}
