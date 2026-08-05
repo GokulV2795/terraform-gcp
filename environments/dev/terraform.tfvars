@@ -1,6 +1,6 @@
 project_id = "terraform-lab-504603"
 
-bucket_name = "terraform-lab-504603-demo-bucketv2"
+bucket_name = "terraform-lab-504603-demo-bucket-v2"
 
 location = "ASIA"
 

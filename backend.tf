@@ -1,6 +1,5 @@
 terraform {
-  backend "gcs" {
-    bucket = "REPLACE_WITH_STATE_BUCKET"
-    prefix = "terraform/state"
+  backend "local" {
+    path = "terraform.tfstate"
   }
 }
