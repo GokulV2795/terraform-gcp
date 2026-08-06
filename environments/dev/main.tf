@@ -23,3 +23,15 @@ module "network" {
 
   subnet_cidr = var.subnet_cidr
 }
+module "firewall" {
+
+  source = "../../modules/firewall"
+
+  project_id = var.project_id
+
+  network_name = module.network.network_name
+
+  source_ranges = var.source_ranges
+
+  target_tags = var.target_tags
+}

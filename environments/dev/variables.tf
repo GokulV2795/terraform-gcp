@@ -36,3 +36,10 @@ variable "subnet_cidr" {
   description = "Development Subnet CIDR"
   type        = string
 }
+variable "source_ranges" {
+  type = list(string)
+}
+
+variable "target_tags" {
+  type = list(string)
+}
