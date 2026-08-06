@@ -26,7 +26,7 @@ target_tags = [
   "terraform-vm"
 ]
 
-zone = "asia-south1-a"
+zone = "asia-south1-c"
 
 instance_name = "terraform-dev-vm"
 
