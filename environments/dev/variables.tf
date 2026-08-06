@@ -22,3 +22,17 @@ variable "labels" {
   description = "Common labels"
   type        = map(string)
 }
+variable "network_name" {
+  description = "Development VPC Name"
+  type        = string
+}
+
+variable "subnet_name" {
+  description = "Development Subnet Name"
+  type        = string
+}
+
+variable "subnet_cidr" {
+  description = "Development Subnet CIDR"
+  type        = string
+}

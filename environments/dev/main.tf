@@ -9,3 +9,17 @@ module "storage" {
   labels      = var.labels
 
 }
+module "network" {
+
+  source = "../../modules/network"
+
+  project_id = var.project_id
+
+  network_name = var.network_name
+
+  subnet_name = var.subnet_name
+
+  region = var.region
+
+  subnet_cidr = var.subnet_cidr
+}

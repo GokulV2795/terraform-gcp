@@ -11,3 +11,9 @@ labels = {
   owner       = "gokul"
   managed_by  = "terraform"
 }
+
+network_name = "terraform-dev-vpc"
+
+subnet_name = "terraform-dev-subnet"
+
+subnet_cidr = "10.10.0.0/24"
