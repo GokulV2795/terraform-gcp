@@ -25,3 +25,10 @@ output "subnet_name" {
 output "subnet_self_link" {
   value = module.network.subnet_self_link
 }
+output "vm_external_ip" {
+  value = module.compute.external_ip
+}
+
+output "vm_internal_ip" {
+  value = module.compute.internal_ip
+}

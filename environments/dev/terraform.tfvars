@@ -25,3 +25,9 @@ source_ranges = [
 target_tags = [
   "terraform-vm"
 ]
+
+zone = "asia-south1-a"
+
+instance_name = "terraform-dev-vm"
+
+machine_type = "e2-micro"

@@ -35,3 +35,25 @@ module "firewall" {
 
   target_tags = var.target_tags
 }
+module "compute" {
+
+  source = "../../modules/compute"
+
+  project_id = var.project_id
+
+  region = var.region
+
+  zone = var.zone
+
+  instance_name = var.instance_name
+
+  machine_type = var.machine_type
+
+  network = module.network.network_name
+
+  subnetwork = module.network.subnet_name
+
+  tags = [
+    "terraform-vm"
+  ]
+}
