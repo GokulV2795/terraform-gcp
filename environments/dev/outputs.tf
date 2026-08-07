@@ -54,3 +54,18 @@ output "private_service_range" {
 output "service_networking_connection" {
   value = module.private_service_access.service_networking_connection
 }
+output "sql_instance_name" {
+  value = module.sql.instance_name
+}
+
+output "sql_private_ip" {
+  value = module.sql.private_ip
+}
+
+output "sql_database" {
+  value = module.sql.database_name
+}
+
+output "sql_user" {
+  value = module.sql.database_user
+}
