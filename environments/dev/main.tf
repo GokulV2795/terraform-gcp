@@ -37,28 +37,21 @@ module "sql" {
 
   source = "../../modules/sql"
 
-  project_id = var.project_id
-
-  region = var.region
-
-  instance_name = "terraform-dev-postgres"
-
-  database_version = "POSTGRES_16"
-
-  tier = "db-f1-micro"
-
-  disk_size = 10
+  project_id        = var.project_id
+  region            = var.region
+  instance_name     = "terraform-dev-postgres"
+  database_version  = "POSTGRES_16"
+  tier              = "db-f1-micro"
+  disk_size         = 10
 
   network_self_link = module.network.network_self_link
 
   database_name = "appdb"
-
   database_user = "appuser"
 
   depends_on = [
     module.private_service_access
   ]
-
 }
 module "firewall" {
 
