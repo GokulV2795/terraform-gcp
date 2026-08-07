@@ -23,6 +23,16 @@ module "network" {
 
   subnet_cidr = var.subnet_cidr
 }
+module "private_service_access" {
+
+  source = "../../modules/private-service-access"
+
+  project_id = var.project_id
+
+  network_self_link = module.network.network_self_link
+
+  address_name = "terraform-dev-private-range"
+}
 module "firewall" {
 
   source = "../../modules/firewall"

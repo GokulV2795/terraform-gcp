@@ -47,3 +47,10 @@ output "enabled_services" {
   value = module.project_services.enabled_services
 
 }
+output "private_service_range" {
+  value = module.private_service_access.reserved_range
+}
+
+output "service_networking_connection" {
+  value = module.private_service_access.service_networking_connection
+}
