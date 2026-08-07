@@ -53,6 +53,8 @@ module "compute" {
 
   subnetwork = module.network.subnet_name
 
+  service_account_email = module.iam.service_account_email
+
   tags = [
     "terraform-vm"
   ]
@@ -64,6 +66,7 @@ module "iam" {
   project_id = var.project_id
 
   service_account_name = "terraform-dev-sa"
+
 
   display_name = "Terraform Dev Service Account"
 

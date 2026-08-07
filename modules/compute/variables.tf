@@ -30,3 +30,16 @@ variable "subnetwork" {
 variable "tags" {
   type = list(string)
 }
+variable "service_account_email" {
+  description = "Service Account Email"
+  type        = string
+}
+
+variable "service_account_scopes" {
+  description = "OAuth scopes for the VM"
+  type        = list(string)
+
+  default = [
+    "https://www.googleapis.com/auth/cloud-platform"
+  ]
+}
