@@ -1,10 +1,41 @@
-# terraform-gcp
+terraform-gcp
 
-Terraform project for GCP infrastructure.
+Enterprise Terraform Project for Google Cloud Platform
 
-## Structure
+Modules
 
-- `environments/` — per-environment root modules (dev, test, prod)
-- `modules/` — reusable Terraform modules (network, storage, compute, iam, sql, cloudrun)
-- `scripts/` — helper scripts
-- `docs/` — documentation
+✔ Storage
+
+✔ Network
+
+✔ Firewall
+
+✔ Compute
+
+Upcoming Modules
+
+IAM
+
+Cloud SQL
+
+Artifact Registry
+
+Cloud Run
+
+Load Balancer
+
+Monitoring
+
+CI/CD
+
+Folder Structure
+
+modules/
+
+environments/
+
+scripts/
+
+docs/
+
+.github/

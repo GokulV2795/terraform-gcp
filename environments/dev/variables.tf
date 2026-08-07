@@ -4,8 +4,23 @@ variable "project_id" {
 }
 
 variable "region" {
-  description = "GCP Region"
-  type        = string
+
+  description = "Deployment Region"
+
+  type = string
+
+  validation {
+
+    condition = contains([
+      "asia-south1",
+      "asia-south2",
+      "us-central1"
+    ], var.region)
+
+    error_message = "Unsupported region."
+
+  }
+
 }
 
 variable "bucket_name" {
@@ -44,7 +59,25 @@ variable "target_tags" {
   type = list(string)
 }
 variable "zone" {
+
+  description = "Deployment Zone"
+
   type = string
+
+  validation {
+
+    condition = contains([
+      "asia-south1-a",
+      "asia-south1-b",
+      "asia-south1-c",
+      "asia-south2-a",
+      "us-central1-a"
+    ], var.zone)
+
+    error_message = "Unsupported zone."
+
+  }
+
 }
 
 variable "instance_name" {
@@ -52,5 +85,11 @@ variable "instance_name" {
 }
 
 variable "machine_type" {
+
+  description = "VM Machine Type"
+
   type = string
+
+  default = "e2-micro"
+
 }
