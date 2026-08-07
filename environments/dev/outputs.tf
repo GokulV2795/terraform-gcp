@@ -11,15 +11,13 @@ output "bucket_self_link" {
   value = module.storage.bucket_self_link
 }
 output "network_name" {
-
   description = "VPC Network Name"
-
-  value = google_compute_network.this.name
-
+  value       = module.network.network_name
 }
 
 output "network_self_link" {
-  value = module.network.network_self_link
+  description = "VPC Self Link"
+  value       = module.network.network_self_link
 }
 
 output "subnet_name" {

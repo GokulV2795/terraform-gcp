@@ -4,13 +4,14 @@ output "network_id" {
 }
 
 output "network_name" {
-  value = google_compute_network.this.name
+  description = "VPC Network Name"
+  value       = google_compute_network.this.name
 }
 
 output "network_self_link" {
-  value = google_compute_network.this.self_link
+  description = "VPC Self Link"
+  value       = google_compute_network.this.self_link
 }
-
 output "subnet_name" {
   value = google_compute_subnetwork.this.name
 }
