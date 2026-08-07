@@ -76,3 +76,34 @@ module "iam" {
     "roles/monitoring.metricWriter"
   ]
 }
+module "project_services" {
+
+  source = "../../modules/project-services"
+
+  project_id = var.project_id
+
+  services = [
+
+    "compute.googleapis.com",
+
+    "iam.googleapis.com",
+
+    "storage.googleapis.com",
+
+    "cloudbuild.googleapis.com",
+
+    "artifactregistry.googleapis.com",
+
+    "run.googleapis.com",
+
+    "sqladmin.googleapis.com",
+
+    "secretmanager.googleapis.com",
+
+    "logging.googleapis.com",
+
+    "monitoring.googleapis.com"
+
+  ]
+
+}

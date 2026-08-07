@@ -40,3 +40,10 @@ output "service_account_email" {
 
   value = module.iam.service_account_email
 }
+output "enabled_services" {
+
+  description = "Enabled Google APIs"
+
+  value = module.project_services.enabled_services
+
+}
