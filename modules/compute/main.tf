@@ -26,13 +26,12 @@ resource "google_compute_instance" "vm" {
 
     access_config {}
   }
-
-  metadata_startup_script = file("${path.module}/startup.sh")
-}
 service_account {
 
   email = var.service_account_email
 
   scopes = var.service_account_scopes
 
+}
+  metadata_startup_script = file("${path.module}/startup.sh")
 }
