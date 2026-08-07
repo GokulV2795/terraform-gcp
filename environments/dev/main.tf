@@ -102,7 +102,9 @@ module "project_services" {
 
     "logging.googleapis.com",
 
-    "monitoring.googleapis.com"
+    "monitoring.googleapis.com",
+
+    "servicenetworking.googleapis.com"
 
   ]
 
