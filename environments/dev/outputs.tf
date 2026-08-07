@@ -34,3 +34,9 @@ output "vm_external_ip" {
 output "vm_internal_ip" {
   value = module.compute.internal_ip
 }
+output "service_account_email" {
+
+  description = "Service Account Email"
+
+  value = module.iam.service_account_email
+}

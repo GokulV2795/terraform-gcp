@@ -57,3 +57,19 @@ module "compute" {
     "terraform-vm"
   ]
 }
+module "iam" {
+
+  source = "../../modules/iam"
+
+  project_id = var.project_id
+
+  service_account_name = "terraform-dev-sa"
+
+  display_name = "Terraform Dev Service Account"
+
+  roles = [
+    "roles/storage.admin",
+    "roles/logging.logWriter",
+    "roles/monitoring.metricWriter"
+  ]
+}
