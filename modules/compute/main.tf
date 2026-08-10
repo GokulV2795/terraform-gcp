@@ -20,18 +20,18 @@ resource "google_compute_instance" "vm" {
 
   network_interface {
 
-    network    = var.network
+    network = var.network
 
     subnetwork = var.subnetwork
 
     access_config {}
   }
-service_account {
+  service_account {
 
-  email = var.service_account_email
+    email = var.service_account_email
 
-  scopes = var.service_account_scopes
+    scopes = var.service_account_scopes
 
-}
+  }
   metadata_startup_script = file("${path.module}/startup.sh")
 }
