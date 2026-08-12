@@ -6,21 +6,30 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   terraform:
-    name: Terraform Validate and Plan
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Authenticate to Google Cloud
+      - id: auth
+        name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
+          create_credentials_file: true
           workload_identity_provider: projects/693101320934/locations/global/workloadIdentityPools/github-pool/providers/github-provider
           service_account: terraform-github-actions@terraform-lab-504603.iam.gserviceaccount.com
+
+      - name: Check Google credentials
+        shell: bash
+        run: |
+          echo "GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}"
+          test -n "$GOOGLE_APPLICATION_CREDENTIALS"
+          test -f "$GOOGLE_APPLICATION_CREDENTIALS"
+          echo "Google credential configuration exists."
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
