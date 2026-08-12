@@ -2,6 +2,11 @@ permissions:
   contents: read
   id-token: write
 
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   terraform:
     name: Terraform Validate and Plan
